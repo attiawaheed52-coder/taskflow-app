@@ -1,0 +1,46 @@
+.edit-page{
+  min-height:100vh;
+  background:#F5F7FB;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.edit-card{
+  width:500px;
+  background:white;
+  padding:40px;
+  border-radius:20px;
+}
+
+.edit-card h1{
+  margin-bottom:25px;
+  color:#6C63FF;
+}
+
+.input-group{
+  margin-bottom:20px;
+}
+
+.input-group label{
+  display:block;
+  margin-bottom:8px;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select{
+  width:100%;
+  padding:14px;
+  border:1px solid #ddd;
+  border-radius:10px;
+}
+
+button{
+  width:100%;
+  padding:14px;
+  background:#6C63FF;
+  color:white;
+  border:none;
+  border-radius:10px;
+}

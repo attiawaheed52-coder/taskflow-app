@@ -1,0 +1,78 @@
+<div class="admin-dashboard">
+
+  <div class="sidebar">
+    <div class="logo">
+      <h2>TaskFlow ✨</h2>
+    </div>
+    <ul>
+      <li><a routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</a></li>
+      <li><a routerLink="/admin/users" routerLinkActive="active">Users</a></li>
+      <li><a routerLink="/admin/all-tasks" routerLinkActive="active">All Tasks</a></li>
+    </ul>
+  </div>
+
+  <div class="main">
+
+    <div class="topbar">
+      <h1>All Registered Users 👥</h1>
+      <button (click)="logout()">Logout 🚪</button>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h2>{{totalUsers}}</h2>
+        <p>👥 Total Registered Users</p>
+      </div>
+      <div class="card">
+        <h2>{{totalTasks}}</h2>
+        <p>📋 Total Global Tasks</p>
+      </div>
+    </div>
+
+    <div class="admin-overview-section" style="margin-top: 30px; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border: 1px solid #e2e8f0;">
+      
+      <div *ngIf="successMessage" style="background-color: #d1fae5; color: #065f46; border: 1px solid #10b981; padding: 12px; border-radius: 8px; margin-bottom: 20px; text-align: center; font-weight: 600; font-size: 15px;">
+        {{ successMessage }}
+      </div>
+
+      <div *ngIf="errorMessage" style="background-color: #fee2e2; color: #991b1b; border: 1px solid #ef4444; padding: 12px; border-radius: 8px; margin-bottom: 20px; text-align: center; font-weight: 600; font-size: 15px;">
+        {{ errorMessage }}
+      </div>
+
+      <table style="width: 100%; border-collapse: collapse; text-align: left;">
+        <thead>
+          <tr style="border-bottom: 2px solid #edf2f7; color: #64748b; font-size: 14px;">
+            <th style="padding: 12px;">Name</th>
+            <th style="padding: 12px;">Email</th>
+            <th style="padding: 12px;">Role</th>
+            <th style="padding: 12px; text-align: center;">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users; let i=index" style="border-bottom: 1px solid #edf2f7; color: #334155; font-size: 15px;">
+            <td style="padding: 14px; font-weight: 500;">{{user.name}}</td>
+            <td style="padding: 14px; color: #6366f1; font-weight: 500; font-family: monospace;">{{user.email}}</td>
+            <td style="padding: 14px;">
+              <span [style.background]="user.role === 'admin' ? '#e0e7ff' : '#f1f5f9'"
+                    [style.color]="user.role === 'admin' ? '#4f46e5' : '#475569'"
+                    style="padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase;">
+                {{user.role}}
+              </span>
+            </td>
+            <td style="padding: 14px; text-align: center;">
+              <button (click)="deleteUser(user.id, user.email)" style="background: transparent; border: none; cursor: pointer; font-size: 16px;" title="Delete User Account">
+                🗑️
+              </button>
+            </td>
+          </tr>
+          <tr *ngIf="users.length === 0">
+            <td colspan="4" style="text-align: center; padding: 30px; color: #94a3b8;">No registered users found.</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+
+</div>

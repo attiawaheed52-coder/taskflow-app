@@ -1,0 +1,47 @@
+.sidebar{
+  width:260px;
+  min-height:100vh;
+  background:#111827;
+  padding:30px 20px;
+  color:white;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:50px;
+}
+
+.icon{
+  width:45px;
+  height:45px;
+  background:#8B5CF6;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:10px;
+  font-weight:bold;
+  font-size:20px;
+}
+
+.logo h2{
+  color:white;
+}
+
+ul{
+  list-style:none;
+}
+
+ul li{
+  padding:16px;
+  margin-bottom:15px;
+  border-radius:12px;
+  cursor:pointer;
+  transition:0.3s;
+  font-size:16px;
+}
+
+ul li:hover{
+  background:#8B5CF6;
+}

@@ -1,0 +1,136 @@
+<nav class="auth-navbar">
+
+  <div class="logo">
+
+    <div class="logo-icon">
+      T
+    </div>
+
+    <h2>TaskFlow</h2>
+
+  </div>
+
+  <div class="nav-links">
+
+    <a routerLink="/auth/login">
+      Login
+    </a>
+
+    <a routerLink="/auth/signup">
+      Sign Up
+    </a>
+
+  </div>
+
+</nav>
+<div class="auth-page">
+
+  <div class="auth-container">
+
+    <div class="left-auth">
+
+      <div class="form-card">
+
+        <div class="logo-center">
+
+          <div class="logo-icon">
+            T
+          </div>
+
+          <h2>TaskFlow</h2>
+
+        </div>
+
+      <h1>Welcome Back</h1>
+
+<p>Login to continue</p>
+
+<!-- SUCCESS MESSAGE -->
+<div
+  class="success-msg"
+  *ngIf="successMessage"
+>
+  {{successMessage}}
+</div>
+
+<!-- ERROR MESSAGE -->
+<div
+  class="error-msg"
+  *ngIf="errorMessage"
+>
+  {{errorMessage}}
+</div>
+        <form
+          [formGroup]="loginForm"
+          (ngSubmit)="submit()"
+        >
+
+          <div class="input-group">
+
+            <label>Email</label>
+
+            <input
+              type="email"
+              formControlName="email"
+              placeholder="Enter email"
+            >
+
+          </div>
+
+          <div class="input-group">
+
+            <label>Password</label>
+
+            <input
+              type="password"
+              formControlName="password"
+              placeholder="Enter password"
+            >
+
+          </div>
+
+          <div class="options">
+
+            <label class="remember">
+              <input type="checkbox">
+              Remember Me
+            </label>
+
+            <a routerLink="/auth/forgot-password">
+              Forgot Password?
+            </a>
+
+          </div>
+
+          <button
+            type="submit"
+            class="auth-btn"
+          >
+            Login
+          </button>
+
+        </form>
+
+        <div class="bottom-text">
+
+          Don't have an account?
+
+          <a routerLink="/auth/signup">
+            Sign Up
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="right-auth">
+
+      <img src="./assets/images/login.jpg">
+
+    </div>
+
+  </div>
+
+</div>

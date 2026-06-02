@@ -1,0 +1,43 @@
+<div class="admin-dashboard">
+
+  <div class="sidebar">
+    <div class="logo">
+      <h2>TaskFlow ✨</h2>
+    </div>
+    <ul>
+      <li><a routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</a></li>
+      <li><a routerLink="/admin/users" routerLinkActive="active">Users</a></li>
+      <li><a routerLink="/admin/all-tasks" routerLinkActive="active">All Tasks</a></li>
+    </ul>
+  </div>
+
+  <div class="main">
+
+    <div class="topbar">
+      <h1 *ngIf="adminUser">Welcome back, {{adminUser?.name}} 👋 (Admin)</h1>
+      <h1 *ngIf="!adminUser">Welcome back Admin 👋</h1>
+      <button (click)="logout()">Logout 🚪</button>
+    </div>
+
+    <div class="cards">
+      
+      <div class="card">
+        <h2>{{totalUsers}}</h2>
+        <p>👥 Total Registered Users</p>
+      </div>
+
+      <div class="card">
+        <h2>{{totalTasks}}</h2>
+        <p>📋 Total Global Tasks</p>
+      </div>
+
+    </div>
+
+    <div class="admin-overview-section" style="margin-top: 30px; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
+      <h2 style="color: #1e293b; font-size: 20px; margin-bottom: 10px;">System Management Console</h2>
+      <p style="color: #64748b; font-size: 14px;">Use the sidebar links to view, manage, and delete system user accounts or monitor global task flows across the entire network.</p>
+    </div>
+
+  </div>
+
+</div>

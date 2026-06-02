@@ -1,0 +1,257 @@
+{
+  "users": [
+    {
+      "name": "attia",
+      "email": "attia.waheed52@gmail.com",
+      "password": "attia123",
+      "confirmPassword": "attia123",
+      "role": "user",
+      "id": "U5wXDG039pE"
+    },
+    {
+      "name": "attia",
+      "email": "attia.waheed52@gmail.com",
+      "password": "attia123",
+      "confirmPassword": "attia123",
+      "role": "user",
+      "id": "EfgiWt9hV-8"
+    },
+    {
+      "name": "hina",
+      "email": "hina.waheed52@gmail.com",
+      "password": "hina123",
+      "confirmPassword": "hina123",
+      "role": "user",
+      "id": "9T7_zXks3y8"
+    },
+    {
+      "name": "anum",
+      "email": "anum.waheed52@gmail.com",
+      "password": "anum123",
+      "confirmPassword": "anum123",
+      "role": "user",
+      "id": "H7iESCZRP8U"
+    },
+    {
+      "name": "attia",
+      "email": "anum.waheed52@gmail.com",
+      "password": "attia 123",
+      "confirmPassword": "attia 123",
+      "role": "user",
+      "id": "pq9SKeLvWl8"
+    },
+    {
+      "name": "attia",
+      "email": "attia.waheed52@gmail.com",
+      "password": "attia123",
+      "confirmPassword": "attia123",
+      "role": "user",
+      "id": "pG4ESnrgmlQ"
+    },
+    {
+      "name": "hina",
+      "email": "hina.waheed52@gmail.com",
+      "password": "hina12",
+      "confirmPassword": "hina12",
+      "role": "user",
+      "id": "T31j6TbLL5M"
+    },
+    {
+      "name": "hina",
+      "email": "hina.waheed52@gmail.com",
+      "password": "hina12",
+      "role": "user",
+      "id": "bi_t5Y73Mvg"
+    },
+    {
+      "name": "hina",
+      "email": "hina.waheed52@gmail.com",
+      "password": "hina23",
+      "role": "user",
+      "id": "uDLr8aK5E84"
+    },
+    {
+      "name": "hina",
+      "email": "hina.waheed52@gmail.com",
+      "password": "hina234",
+      "role": "user",
+      "id": "EYdEVVW94e0"
+    },
+    {
+      "name": "hina",
+      "email": "hina.waheed52@gmail.com",
+      "password": "hina123",
+      "role": "user",
+      "id": "dKOcU1uzrxE"
+    },
+    {
+      "name": "Attia waheed",
+      "email": "attia.waheed52@gmail.com",
+      "password": "attia12",
+      "role": "admin",
+      "id": "fJaYYdoqyO4"
+    },
+    {
+      "name": "Attia waheed",
+      "email": "attia.waheed52@gmail.com",
+      "password": "hina12",
+      "role": "admin",
+      "id": "EtSHGDn7-8A"
+    },
+    {
+      "name": "Attia waheed",
+      "email": "attia.waheed52@gmail.com",
+      "password": "attia55",
+      "role": "admin",
+      "id": "b0axdUXEVMc"
+    },
+    {
+      "name": "Attia waheed",
+      "email": "attia.waheed52@gmail.com",
+      "password": "attia55",
+      "role": "admin",
+      "id": "HCi30rztJ1s"
+    },
+    {
+      "name": "Attia waheed",
+      "email": "attia.waheed52@gmail.com",
+      "password": "attia55",
+      "role": "admin",
+      "id": "PLq7mjh8IRs"
+    },
+    {
+      "name": "Attia waheed",
+      "email": "attia.waheed52@gmail.com",
+      "password": "attia55",
+      "role": "admin",
+      "id": "OoRQxe1MdB0"
+    },
+    {
+      "name": "Attia waheed",
+      "email": "attia.waheed52@gmail.com",
+      "password": "attia55",
+      "role": "admin",
+      "id": "Dk4jKNIJgq0"
+    },
+    {
+      "name": "anum",
+      "email": "anum.waheed52@gmail.com",
+      "password": "anum45",
+      "role": "user",
+      "id": "9G8dUwnRfLw"
+    },
+    {
+      "name": "anum",
+      "email": "anum.waheed52@gmail.com",
+      "password": "anum45",
+      "role": "admin",
+      "id": "Nbk94oL03jw"
+    },
+    {
+      "name": "anum",
+      "email": "anum.waheed52@gmail.com",
+      "password": "anum45",
+      "role": "admin",
+      "id": "G3d5pjK1boU"
+    },
+    {
+      "name": "anum",
+      "email": "anum.waheed52@gmail.com",
+      "password": "anum56",
+      "role": "admin",
+      "id": "0Y0pYnhazHQ"
+    },
+    {
+      "name": "alina",
+      "email": "alina52@email.com",
+      "password": "alina88",
+      "role": "admin",
+      "id": "4iOvhrRkwIE"
+    },
+    {
+      "name": "saba",
+      "email": "saba@gmail.com",
+      "password": "saba99",
+      "role": "user",
+      "id": "cU1yz1YoSX4"
+    },
+    {
+      "name": "saba",
+      "email": "saba@gmail.com",
+      "password": "saba99",
+      "role": "user",
+      "id": "2vqW6uUlU04"
+    },
+    {
+      "name": "fatima",
+      "email": "fatima@gmail.com",
+      "password": "fatima55",
+      "role": "admin",
+      "id": "1CeRG9KbSNo"
+    },
+    {
+      "name": "fatima",
+      "email": "fatima@gmail.com",
+      "password": "fatima55",
+      "role": "admin",
+      "id": "mewoNcYOS-c"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "learn angular",
+      "description": "make notes",
+      "dueDate": "2026-05-08",
+      "priority": "High",
+      "status": "Completed",
+      "id": "V1PzOxqekM4",
+      "email": "attia.waheed52@gmail.com"
+    },
+    {
+      "title": "learn angular ",
+      "description": "make notes",
+      "dueDate": "2026-05-22",
+      "priority": "Medium",
+      "status": "Pending",
+      "id": "GCzbmcXVBk0",
+      "email": "hina.waheed52@gmail.com"
+    },
+    {
+      "title": "learn python",
+      "description": "make notes",
+      "dueDate": "2026-05-08",
+      "priority": "High",
+      "status": "Pending",
+      "id": "u0AfVLKm038",
+      "email": "hina.waheed52@gmail.com"
+    },
+    {
+      "title": "learn html",
+      "description": "make notes",
+      "dueDate": "2026-04-30",
+      "priority": "High",
+      "status": "Overdue",
+      "id": "AJo0SPPp1Rk",
+      "email": "anum.waheed52@gmail.com"
+    },
+    {
+      "title": "learn data science",
+      "description": "make notes",
+      "dueDate": "2026-05-30",
+      "priority": "Low",
+      "status": "Completed",
+      "id": "qK4QAkfCj0Y",
+      "email": "attia.waheed52@gmail.com"
+    },
+    {
+      "title": "react",
+      "description": "make notes hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
+      "dueDate": "2026-05-08",
+      "priority": "High",
+      "status": "Pending",
+      "email": "saba@gmail.com",
+      "id": "tjbV5l6laT4"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
