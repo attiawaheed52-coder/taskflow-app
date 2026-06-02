@@ -1,0 +1,57 @@
+<div class="sidebar">
+
+  <div class="logo">
+
+    <div class="icon">
+      T
+    </div>
+
+    <h2>
+      TaskFlow
+    </h2>
+
+  </div>
+
+  <!-- USER MENU -->
+  <ul *ngIf="currentUser?.role === 'user'">
+
+    <li routerLink="/user/dashboard">
+      Dashboard
+    </li>
+
+    <li routerLink="/user/my-tasks">
+      My Tasks
+    </li>
+
+    <li routerLink="/user/create-task">
+      Create Task
+    </li>
+
+    <li routerLink="/user/profile">
+      Profile
+    </li>
+
+    <li routerLink="/user/change-password">
+      Change Password
+    </li>
+
+  </ul>
+
+  <!-- ADMIN MENU -->
+  <ul *ngIf="currentUser?.role === 'admin'">
+
+    <li routerLink="/admin/dashboard">
+      Dashboard
+    </li>
+
+    <li routerLink="/admin/users">
+      Users
+    </li>
+
+    <li routerLink="/admin/all-tasks">
+      All Tasks
+    </li>
+
+  </ul>
+
+</div>

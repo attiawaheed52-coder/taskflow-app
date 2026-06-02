@@ -1,0 +1,75 @@
+<div class="dashboard">
+
+  <div class="sidebar">
+    <div class="logo">
+      <h2>TaskFlow ✨</h2>
+    </div>
+    <ul>
+      <li><a routerLink="/user/dashboard" routerLinkActive="active">Dashboard</a></li>
+      <li><a routerLink="/user/my-tasks" routerLinkActive="active">My Tasks</a></li>
+      <li><a routerLink="/user/create-task" routerLinkActive="active">Create Task</a></li>
+      <li><a routerLink="/user/profile" routerLinkActive="active">Profile</a></li>
+      <li><a routerLink="/user/change-password" routerLinkActive="active">Change Password</a></li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <div class="topbar">
+      <h1 *ngIf="user">Welcome back, {{user?.name}} 👋</h1>
+      <h1 *ngIf="!user">Welcome back 👋</h1>
+      <button (click)="logout()">Logout 🚪</button>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h2>{{totalTasks}}</h2>
+        <p>📋 Total Tasks</p>
+      </div>
+      <div class="card">
+        <h2>{{pendingTasks}}</h2>
+        <p>⏳ Pending</p>
+      </div>
+      <div class="card">
+        <h2>{{completedTasks}}</h2>
+        <p>✅ Completed</p>
+      </div>
+      <div class="card">
+        <h2>{{overdueTasks}}</h2>
+        <p>🚨 Overdue</p>
+      </div>
+    </div>
+
+    <div class="task-section">
+      <h2>⚡ Recent Tasks</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Task Name</th>
+            <th>Current Status</th>
+            <th>Priority Level</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let task of tasks">
+            <td class="task-title">{{task.title}}</td>
+            <td>
+              <select [ngModel]="task.status" (ngModelChange)="changeStatus(task, $event)">
+                <option value="Pending">Pending</option>
+                <option value="Completed">Completed</option>
+                <option value="Overdue">Overdue</option>
+              </select>
+            </td>
+            <td>
+              <select [ngModel]="task.priority" (ngModelChange)="changePriority(task, $event)">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
