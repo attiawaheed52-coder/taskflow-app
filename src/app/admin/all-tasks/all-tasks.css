@@ -1,0 +1,222 @@
+.all-tasks-page{
+  min-height:100vh;
+  background:#F5F7FB;
+  padding:30px;
+}
+
+.all-tasks-page h1{
+  margin-bottom:30px;
+}
+
+.table-card{
+  background:white;
+  padding:30px;
+  border-radius:20px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+table th,
+table td{
+  padding:18px;
+  border-bottom:1px solid #eee;
+}
+.priority-high {
+  background-color: #fee2e2;
+  color: #ef4444;
+}
+
+.priority-medium {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+.priority-low {
+  background-color: #d1e7dd;
+  color: #0f5132;
+}
+.admin-dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: #f8fafc; /* Beautiful soft layout background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* SIDEBAR RE-DESIGN */
+.sidebar {
+  width: 260px;
+  background: white; /* Light clean look matching user dash */
+  border-right: 1px solid #e2e8f0;
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .logo h2 {
+  color: #6366f1; /* TaskFlow Identity theme color */
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 8px;
+}
+
+.sidebar ul li a {
+  display: block;
+  padding: 14px 18px;
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Active and Hover States styling */
+.sidebar ul li a:hover {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.sidebar ul li a.active {
+  background: #6366f1;
+  color: white;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+}
+
+/* MAIN PANEL LAYOUT */
+.main {
+  flex: 1;
+  padding: 40px;
+}
+
+/* TOPBAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.topbar h1 {
+  font-size: 26px;
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.topbar button {
+  background: #fee2e2;
+  color: #ef4444;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.topbar button:hover {
+  background: #fca5a5;
+}
+
+/* DASHBOARD CARDS LAYOUT */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.card h2 {
+  font-size: 36px;
+  color: #1e293b;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+}
+
+.card p {
+  color: #64748b;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+}
+/* Custom Toast Floating Configuration */
+.custom-toast-container {
+  position: fixed;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  min-width: 320px;
+  max-width: 450px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  animation: slideDownIn 0.4s ease-out;
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toast-icon {
+  font-size: 18px;
+}
+
+.toast-text {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Success Card Theme Styling (Green) */
+.toast-success {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+}
+
+/* Error Card Theme Styling (Red) */
+.toast-error {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+}
+
+/* Smooth Entrance Transition Animation */
+@keyframes slideDownIn {
+  from {
+    top: -50px;
+    opacity: 0;
+  }
+  to {
+    top: 25px;
+    opacity: 1;
+  }
+}

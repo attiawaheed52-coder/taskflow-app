@@ -1,0 +1,145 @@
+<div *ngIf="showToast" [ngClass]="{'toast-success': toastType === 'success', 'toast-error': toastType === 'error'}" class="custom-toast-container">
+  <div class="toast-content">
+    <span class="toast-icon">{{ toastType === 'success' ? '✅' : '❌' }}</span>
+    <p class="toast-text">{{ toastMessage }}</p>
+  </div>
+</div>
+
+<div class="admin-dashboard">
+
+  <div class="sidebar">
+    <div class="logo">
+      <h2>TaskFlow ✨</h2>
+    </div>
+    <ul>
+      <li><a routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</a></li>
+      <li><a routerLink="/admin/users" routerLinkActive="active">Users</a></li>
+      <li><a routerLink="/admin/all-tasks" routerLinkActive="active">All Tasks</a></li>
+    </ul>
+  </div>
+
+  <div class="main">
+
+    <div class="topbar">
+      <h1>Global Network Tasks 📋</h1>
+      <button (click)="logout()">Logout 🚪</button>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h2>{{totalUsers}}</h2>
+        <p>👥 Total Registered Users</p>
+      </div>
+      <div class="card">
+        <h2>{{totalTasks}}</h2>
+        <p>📋 Total Global Tasks</p>
+      </div>
+    </div>
+
+    <div *ngIf="isEditing" style="margin-top: 30px; background: #f8fafc; padding: 25px; border-radius: 15px; border: 1px solid #cbd5e1;">
+      <h3 style="margin-top: 0; color: #1e293b;">✏️ Edit Task (Admin Mode)</h3>
+      <div style="display: flex; flex-direction: column; gap: 12px; max-width: 500px;">
+        <div>
+          <label style="display:block; font-weight:600; margin-bottom:4px; color:#475569;">Title:</label>
+          <input [(ngModel)]="selectedTask.title" style="width:100%; padding:8px; border-radius:6px; border:1px solid #cbd5e1;" />
+        </div>
+        <div>
+          <label style="display:block; font-weight:600; margin-bottom:4px; color:#475569;">Assigned User Email:</label>
+          <input [(ngModel)]="selectedTask.email" style="width:100%; padding:8px; border-radius:6px; border:1px solid #cbd5e1;" placeholder="user@example.com" />
+        </div>
+        <div>
+          <label style="display:block; font-weight:600; margin-bottom:4px; color:#475569;">Description:</label>
+          <textarea [(ngModel)]="selectedTask.description" style="width:100%; padding:8px; border-radius:6px; border:1px solid #cbd5e1; height:70px;"></textarea>
+        </div>
+        <div>
+          <label style="display:block; font-weight:600; margin-bottom:4px; color:#475569;">Status:</label>
+          <select [(ngModel)]="selectedTask.status" style="width:100%; padding:8px; border-radius:6px; border:1px solid #cbd5e1;">
+            <option value="Pending">Pending</option>
+            <option value="Completed">Completed</option>
+            <option value="Overdue">Overdue</option>
+          </select>
+        </div>
+        <div style="display: flex; gap: 10px; margin-top: 5px;">
+          <button (click)="saveTaskUpdate()" style="background:#6366f1; color:white; border:none; padding:8px 16px; border-radius:6px; cursor:pointer; font-weight:600;">Save Changes</button>
+          <button (click)="isEditing = false" style="background:#94a3b8; color:white; border:none; padding:8px 16px; border-radius:6px; cursor:pointer; font-weight:600;">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="admin-overview-section" style="margin-top: 30px; display: flex; flex-direction: column; gap: 25px; background: transparent; padding: 0; box-shadow: none; border: none;">
+      
+      <div *ngFor="let group of groupedTasks" class="user-task-card" style="background: white; padding: 25px; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border: 1px solid #e2e8f0;">
+        
+        <div style="margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid #f1f5f9; display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 20px;">📧</span>
+          <h3 style="margin: 0; color: #6366f1; font-family: monospace; font-size: 18px; font-weight: 600;">
+            {{ group.email }}
+          </h3>
+        </div>
+
+        <table style="width: 100%; border-collapse: collapse; text-align: left;">
+          <thead>
+            <tr style="border-bottom: 2px solid #edf2f7; color: #64748b; font-size: 14px;">
+              <th style="padding: 12px;">Title</th>
+              <th style="padding: 12px;">Description</th>
+              <th style="padding: 12px;">Due Date</th>
+              <th style="padding: 12px;">Priority</th>
+              <th style="padding: 12px;">Status</th>
+              <th style="padding: 12px;">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let task of group.tasks" style="border-bottom: 1px solid #edf2f7; color: #334155; font-size: 15px;">
+              <td style="padding: 14px; font-weight: 500; color: #1e293b;">{{task.title}}</td>
+              <td style="padding: 14px; color: #64748b; max-width: 250px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{task.description}}</td>
+              <td style="padding: 14px; color: #475569; font-weight: 500;">{{task.dueDate}}</td>
+              <td style="padding: 14px;">
+                <span [ngClass]="{
+                  'priority-high': task.priority?.toLowerCase() === 'high',
+                  'priority-medium': task.priority?.toLowerCase() === 'medium',
+                  'priority-low': task.priority?.toLowerCase() === 'low'
+                }" style="padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600;">
+                  {{task.priority}}
+                </span>
+              </td>
+              <td style="padding: 14px;">
+                <span style="font-size: 13px; font-weight: 500; color: #10b981;">● {{task.status || 'Pending'}}</span>
+              </td>
+              <td style="padding: 14px;">
+                <div style="display: flex; gap: 10px;">
+                  <button (click)="editTask(task)" style="background: transparent; border: none; cursor: pointer; font-size: 16px;" title="Edit Task">✏️</button>
+                  <button (click)="deleteAdminTask(task.id)" style="background: transparent; border: none; cursor: pointer; font-size: 16px; position: relative; z-index: 10;" title="Delete Task">🗑️</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <div *ngIf="tasks.length === 0" style="background: white; text-align: center; padding: 40px; color: #94a3b8; border-radius: 20px; border: 1px solid #e2e8f0;">
+        No tasks have been created across the network yet.
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div *ngIf="showDeleteModal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.4); backdrop-filter: blur(4px); z-index: 10000; display: flex; align-items: center; justify-content: center;">
+  <div style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); width: 100%; max-width: 400px; text-align: center; border: 1px solid #e2e8f0;">
+    <div style="font-size: 40px; margin-bottom: 15px;">🗑️</div>
+    <h3 style="margin: 0 0 10px 0; color: #0f172a; font-size: 18px; font-weight: 700;">Confirm Delete</h3>
+    <p style="color: #64748b; font-size: 14px; margin: 0 0 24px 0; line-height: 1.5;">Are you sure you want to delete this task from the entire network?</p>
+    
+    <div style="display: flex; gap: 12px; justify-content: center;">
+      <button (click)="confirmDelete()" style="background: #ef4444; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px; transition: background 0.2s;">
+        Yes, Delete
+      </button>
+      <button (click)="cancelDelete()" style="background: #f1f5f9; color: #475569; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 14px; transition: background 0.2s;">
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>
