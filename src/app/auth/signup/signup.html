@@ -1,0 +1,82 @@
+<nav class="auth-navbar">
+  <div class="logo">
+    <div class="logo-icon">T</div>
+    <h2>TaskFlow</h2>
+  </div>
+  <div class="nav-links">
+    <a routerLink="/auth/login">Login</a>
+    <a routerLink="/auth/signup">Sign Up</a>
+  </div>
+</nav>
+
+<div class="auth-page">
+  <div class="auth-container">
+    
+    <div class="left-auth">
+      <div class="form-card">
+        
+        <div class="logo-center">
+          <div class="logo-icon">T</div>
+          <h2 class="logo-text">TaskFlow</h2>
+        </div>
+
+        <div *ngIf="successMessage" class="success-alert">
+          {{ successMessage }}
+        </div>
+
+        <div *ngIf="errorMessage" class="error-alert">
+          {{ errorMessage }}
+        </div>
+
+        <h1>Create Account</h1>
+        <p>Create your account to continue</p>
+
+        <form [formGroup]="signupForm" (ngSubmit)="submit()">
+          
+          <div class="input-group">
+            <label>Full Name</label>
+            <input type="text" formControlName="name" placeholder="Enter full name">
+          </div>
+
+          <div class="input-group">
+            <label>Email</label>
+            <input type="email" formControlName="email" placeholder="Enter email">
+          </div>
+
+          <div class="input-group">
+            <label>Role</label>
+            <select formControlName="role" name="role">
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label>Password</label>
+            <input type="password" formControlName="password" placeholder="Enter password">
+          </div>
+
+          <div class="input-group">
+            <label>Confirm Password</label>
+            <input type="password" formControlName="confirmPassword" placeholder="Confirm password">
+          </div>
+
+          <button type="submit" class="auth-btn">Sign Up</button>
+
+        </form>
+
+        <div class="bottom-text">
+          Already have an account? <a routerLink="/auth/login">Login</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="right-auth">
+      <div class="right-content">
+        <img src="./assets/images/sign1.jpg">
+      </div>
+    </div>
+
+  </div>
+</div>

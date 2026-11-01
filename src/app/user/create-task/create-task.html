@@ -1,0 +1,107 @@
+<div class="dashboard">
+
+  <div class="sidebar">
+
+    <div class="logo">
+      <h2>TaskFlow ✨</h2>
+    </div>
+
+    <ul>
+      <li><a routerLink="/user/dashboard">Dashboard</a></li>
+      <li><a routerLink="/user/my-tasks">My Tasks</a></li>
+      <li><a routerLink="/user/create-task" class="active">Create Task</a></li>
+      <li><a routerLink="/user/profile">Profile</a></li>
+      <li><a routerLink="/user/change-password">Change Password</a></li>
+    </ul>
+
+  </div>
+
+  <div class="main">
+
+    <div class="topbar">
+      <h1>Create New Task ✨</h1>
+      <button (click)="logout()">Logout 🚪</button>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h2>{{totalTasks}}</h2>
+        <p>📋 Total Tasks</p>
+      </div>
+      <div class="card">
+        <h2>{{pendingTasks}}</h2>
+        <p>⏳ Pending</p>
+      </div>
+      <div class="card">
+        <h2>{{completedTasks}}</h2>
+        <p>✅ Completed</p>
+      </div>
+      <div class="card">
+        <h2>{{overdueTasks}}</h2>
+        <p>🚨 Overdue</p>
+      </div>
+    </div>
+
+    <div class="task-section">
+
+      <div class="task-card">
+
+        <h2>Create Task</h2>
+
+        <div *ngIf="successMessage" class="success-alert">
+          {{ successMessage }}
+        </div>
+
+        <div *ngIf="errorMessage" class="error-alert">
+          {{ errorMessage }}
+        </div>
+
+        <form
+          [formGroup]="taskForm"
+          (ngSubmit)="submit()"
+        >
+
+          <div class="input-group">
+            <label>Title</label>
+           <input #titleInput type="text" formControlName="title" placeholder="Enter task title">
+          </div>
+
+          <div class="input-group">
+            <label>Description</label>
+            <textarea formControlName="description"></textarea>
+          </div>
+
+          <div class="input-group">
+            <label>Due Date</label>
+            <input type="date" formControlName="dueDate">
+          </div>
+
+          <div class="input-group">
+            <label>Status</label>
+            <select formControlName="status">
+              <option value="Pending">Pending</option>
+              <option value="Completed">Completed</option>
+              <option value="Overdue">Overdue</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label>Priority</label>
+            <select formControlName="priority">
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </select>
+          </div>
+
+          <button type="submit">Create Task</button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

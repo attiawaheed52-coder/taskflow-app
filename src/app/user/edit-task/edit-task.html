@@ -1,0 +1,68 @@
+<div class="edit-page">
+
+  <div class="edit-card">
+
+    <h1>Edit Task</h1>
+
+    <form
+      [formGroup]="taskForm"
+      (ngSubmit)="updateTask()"
+    >
+
+      <div class="input-group">
+
+        <label>Title</label>
+
+        <input
+          type="text"
+          formControlName="title"
+        >
+
+      </div>
+
+      <div class="input-group">
+
+        <label>Description</label>
+
+        <textarea
+          formControlName="description"
+        ></textarea>
+
+      </div>
+
+      <div class="input-group">
+
+        <label>Due Date</label>
+
+        <input
+          type="date"
+          formControlName="dueDate"
+        >
+
+      </div>
+
+      <div class="input-group">
+
+        <label>Priority</label>
+
+        <select formControlName="priority">
+
+          <option>High</option>
+
+          <option>Medium</option>
+
+          <option>Low</option>
+
+        </select>
+
+      </div>
+
+      <button>
+        Update Task
+      </button>
+
+    </form>
+
+  </div>
+
+</div>

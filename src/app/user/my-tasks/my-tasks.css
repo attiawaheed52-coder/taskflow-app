@@ -1,0 +1,225 @@
+.tasks-page{
+  min-height:100vh;
+  background:#F5F7FB;
+  padding:30px;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:30px;
+}
+
+.topbar h1{
+  font-size:32px;
+}
+
+.create-btn{
+  background:#6C63FF;
+  color:white;
+  padding:12px 22px;
+  border-radius:10px;
+  text-decoration:none;
+}
+
+.table-card{
+  background:white;
+  padding:25px;
+  border-radius:20px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+table th,
+table td{
+  padding:18px;
+  border-bottom:1px solid #eee;
+}
+
+.priority{
+  background:#F3E8FF;
+  color:#6C63FF;
+  padding:6px 12px;
+  border-radius:20px;
+}
+
+.edit{
+  background:#6C63FF;
+  color:white;
+  border:none;
+  padding:8px 14px;
+  border-radius:8px;
+  margin-right:10px;
+  cursor:pointer;
+}
+
+.delete{
+  background:#EF4444;
+  color:white;
+  border:none;
+  padding:8px 14px;
+  border-radius:8px;
+  cursor:pointer;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: #f8fafc; 
+  color: #0f172a;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 280px;
+  background: #ffffff;
+  padding: 40px 24px;
+  border-right: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo h2 {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 50px;
+  padding-left: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #64748b;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  border-radius: 14px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar ul li a:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+  transform: translateX(4px);
+}
+
+.sidebar ul li a.active {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.15);
+}
+
+/* MAIN PANEL */
+.main {
+  flex: 1;
+  padding: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.03), transparent 400px);
+}
+
+/* MODERNISED HEADINGS & TOPBAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 45px;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 20px;
+}
+
+.topbar h1 {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.75px;
+  font-size: 30px;
+  
+}
+
+.topbar button {
+  background: #4f46e5;
+  border: 1px solid rgba(239, 68, 68, 0.1);
+  color: whitesmoke;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 28px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.topbar button:hover {
+  background:#6366f1;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.15);
+  transform: translateY(-2px);
+}
+
+/* CARDS (CLEAN WHITE LOOK) */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 45px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 24px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #cbd5e1;
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.04);
+}
+
+.card h2 {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.card p {
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Accent colors for cards text */
+.cards .card:nth-child(1) h2 { color: #4f46e5; }
+.cards .card:nth-child(2) h2 { color: #d97706; }
+.cards .card:nth-child(3) h2 { color: #059669; }
+.cards .card:nth-child(4) h2 { color: #dc2626; }
